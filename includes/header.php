@@ -8,7 +8,8 @@
 <html>
 <head>
 	<title><?= ($page_title); ?></title>
-	<link rel ="stylesheet" type="text/css" href="sample.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/skeleton.css">
 </head>
 
 <body>

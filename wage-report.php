@@ -1,6 +1,6 @@
 <?php
 // Assigning our page title.
-$page_title = 'MySQL Query';
+$page_title = 'Wage Report';
 
 // Routine initialization and testing.
 include_once('initialize.php');

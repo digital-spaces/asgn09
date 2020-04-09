@@ -1,19 +1,20 @@
 <?php
-$page_title = 'Raises'; 
-include_once("initialize.php");
+// Assigning our page title.
+$page_title = 'Raises';
 
+// Routine initialization and testing.
+include_once("initialize.php");
 check_db_connection($connect);
 
-$userQuery = hourly_wage_less_than_ten_dollars_query();
+$userQuery = raises_query();
 
 $result = mysqli_query($connect, $userQuery);
 
 check_that_query_runs($result);
+check_query_num_rows($result); // Only for queries that need it!
 
-if (mysqli_num_rows($result) == 0) {
-	print("No records found with query $userQuery");
-}
-else { 
+// Page specific display.
+if (mysqli_num_rows($result) !== 0) { 
 
 	echo "<h1>List of Employees Who Need a Raise</h1>";
 	echo "<table border=\"1\" width=\"2em\">";
@@ -24,8 +25,10 @@ else {
 	}
 	echo "</table>";
 }
-	mysqli_close($connect); 
-	include_once("includes/footer.php");
+
+// Finalized stuff.
+mysqli_close($connect); 
+include_once("includes/footer.php");
 ?>
 
 
